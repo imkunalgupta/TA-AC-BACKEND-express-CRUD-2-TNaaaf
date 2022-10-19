@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <a href="/">
+      <button>Home</button>
+    </a>
+    <nav>
+      <a href="/articles/new">
+        <button>Add Article</button>
+      </a>
+    </nav>
+    <form action="/articles/<%= article.id%>" method="post">
+      <h2>Update Article</h2>
+      <input
+        type="text"
+        name="title"
+        id=""
+        placeholder="Title"
+        value="<%= article.title %>"
+      />
+      <textarea
+        name="description"
+        id=""
+        cols="10"
+        rows="10 "
+        placeholder="Description"
+      >
+        <%= article.description %>
+    </textarea
+      >
+      <input
+        type="text"
+        name="tags"
+        placeholder="Tags"
+        value="<%= article.tags %>"
+      />
+      <input
+        type="text"
+        name="author"
+        placeholder="Author Name"
+        value="<%= article.author %>"
+      />
+      <input
+        type="number"
+        name="likes"
+        placeholder="Likes"
+        value="<%= article.likes %>"
+      />
+      <button type="submit">Updated Article</button>
+    </form>
+  </body>
+</html>

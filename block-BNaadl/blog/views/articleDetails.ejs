@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="hero-header">
+      <a href="/">
+        <h2>Articles</h2>
+      </a>
+      <nav>
+        <a href="/articles">
+          <button>Back</button>
+        </a>
+      </nav>
+    </header>
+    <div class="box-1">
+      <h2>Title: <%= article.title %></h2>
+      <p>Author: <%= article.author %></p>
+      <p>Tags: <%= article.tags %></p>
+      <p>Description: <%= article.description %></p>
+      <h3>Likes: <%= article.likes ? article.likes : 0 %></h3>
+    </div>
+    <div class="hero-header">
+      <div>
+        <a href="/articles/<%-article.id%>/inc">
+          <button>Likes</button>
+        </a>
+      </div>
+      <div>
+        <a href="/articles/<%= article.id%>/edit">
+          <button>Edit</button>
+        </a>
+      </div>
+      <div>
+        <a href="/articles/<%=article.id%>/delete">
+          <button>Delete</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
