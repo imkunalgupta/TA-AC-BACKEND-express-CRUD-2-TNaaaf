@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="hero-header">
+      <a href="/">
+        <h2>Articles</h2>
+      </a>
+      <nav>
+        <a href="/articles">
+          <button>Back</button>
+        </a>
+      </nav>
+    </header>
+    <div class="box-1">
+      <h2>Title: <%= article.title %></h2>
+      <p>Author: <%= article.author %></p>
+      <p>Tags: <%= article.tags %></p>
+      <p>Description: <%= article.description %></p>
+      <h3>Likes: <%= article.likes ? article.likes : 0 %></h3>
+    </div>
+    <div class="hero-header">
+      <div>
+        <a href="/articles/<%-article.id%>/inc">
+          <button>Likes</button>
+        </a>
+      </div>
+      <div>
+        <a href="/articles/<%= article.id%>/edit">
+          <button>Edit</button>
+        </a>
+      </div>
+      <div>
+        <a href="/articles/<%=article.id%>/delete">
+          <button>Delete</button>
+        </a>
+      </div>
+    </div>
+    <div>
+      <form action="/articles/<%= article.id %>/comments" method="post">
+        <textarea name="content" rows="3" placeholder="Add Comment"></textarea>
+        <input type="submit" value="Add Comment" />
+      </form>
+    </div>
+    <h2>Comments</h2>
+    <hr />
+    <% article.comments.forEach(c => { %>
+    <div class="divdata white">
+      <p><%= c.content %></p>
+      <a href="/comments/<%= c.id %>/edit">
+        <button class="update">Edit</button>
+      </a>
+      <a href="/comments/<%= c.id %>/delete">
+        <button class="delete">Delete</button>
+      </a>
+    </div>
+    <% }) %>
+  </body>
+</html>
