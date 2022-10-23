@@ -63,7 +63,10 @@ router.get('/:id/delete', (req, res, next) => {
   var id = req.params.id;
   Article.findByIdAndDelete(id, (err, article) => {
     if (err) return next(err);
-    res.redirect('/articles');
+    Comment.remove({ articleId: article.id }, (err) => {
+      if (err) return next(err);
+      res.redirect('/articles');
+    });
   });
 });
 
