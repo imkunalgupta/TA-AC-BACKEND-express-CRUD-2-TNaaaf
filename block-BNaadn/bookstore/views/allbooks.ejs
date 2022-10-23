@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All the books from our store</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">Bookstore</a>
+      <nav>
+        <ul class="center">
+          <li><a href="/" class="menu-btn">Home</a></li>
+          <li><a href="/books" class="menu-btn">All-books</a></li>
+          <li>
+            <a href="/books/fiction/category" class="menu-btn">Fiction</a>
+          </li>
+          <li>
+            <a href="/books/technology/category" class="menu-btn">Technology</a>
+          </li>
+          <li>
+            <a href="/books/adventure/category" class="menu-btn">Adventure</a>
+          </li>
+          <li>
+            <a href="/books/motivation/category" class="menu-btn">Motivation</a>
+          </li>
+          <li><a href="/books/new" class="menu-btn btn">Add book</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="all-books">
+        <div class="book-container">
+          <%books.forEach(book=>{%>
+          <div class="book-card">
+            <h2><%= book.title%></h2>
+            <p><%= book.publication%></p>
+          </div>
+          <%})%>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
