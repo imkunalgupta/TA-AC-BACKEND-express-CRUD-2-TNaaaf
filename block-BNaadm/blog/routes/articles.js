@@ -29,12 +29,18 @@ router.get('/', (req, res, next) => {
 //fetch only one article
 router.get('/:id', (req, res, next) => {
   var id = req.params.id;
-  Article.findById(id, (err, article) => {
-    if (err) return next(err);
-    res.render('articleDetails.ejs', { article: article });
-  });
+  // Article.findById(id, (err, article) => {
+  //   if (err) return next(err);
+  //   res.render('articleDetails.ejs', { article: article });
+  // });
+  Article.findById(id)
+    .populate('comments')
+    .exec((err, article) => {
+      if (err) return next(err);
+      console.log(article);
+      res.render('articleDetails.ejs', { article: article });
+    });
 });
-
 //update article
 router.get('/:id/edit', (req, res, next) => {
   var id = req.params.id;
@@ -71,17 +77,18 @@ router.get('/:id/inc', (req, res, next) => {
 });
 
 //adding comments
-router.post('/:id/comments', (req, res, next) => {
-  var id = req.params.id;
-  req.body.articleId = id;
-  Comment.create(req.body, (err, addedcomment) => {
+router.post('/:articleId/comments', (req, res, next) => {
+  var articleId = req.params.articleId;
+  console.log(req.body);
+  req.body.articleId = articleId;
+  Comment.create(req.body, (err, comment) => {
     if (err) return next(err);
     Article.findByIdAndUpdate(
-      id,
-      { $push: { commets: addedcomment.id } },
-      (err, updatedarticle) => {
+      articleId,
+      { $push: { comments: comment.id } },
+      (err, article) => {
         if (err) return next(err);
-        res.redirect('/articles/' + id);
+        res.redirect('/articles/' + articleId);
       }
     );
   });

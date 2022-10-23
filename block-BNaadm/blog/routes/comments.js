@@ -3,9 +3,9 @@ var router = express.Router();
 var Article = require('../models/article');
 var Comment = require('../models/comment');
 
-router.get('/:id/edit', (req, res, next) => {
-  var id = req.params.id;
-  Comment.findById(id, (err, comment) => {
+router.get('/:commentId/edit', (req, res, next) => {
+  var commentId = req.params.commentId;
+  Comment.findById(commentId, (err, comment) => {
     if (err) return next(err);
     res.render('updateComment', { comment });
   });
