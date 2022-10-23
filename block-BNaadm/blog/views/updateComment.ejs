@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="hero-header">
+      <a href="/">
+        <button>Home</button>
+      </a>
+      <nav>
+        <a href="/articles">
+          <button>Article List</button>
+        </a>
+      </nav>
+    </div>
+    <form action="/comments/<%= comment.id%>" method="post">
+      <h2>Edit Comments</h2>
+      <textarea name="content" rows="6" placeholder="Update Comment">
+          <%= comment.content %>
+      </textarea>
+      <button class="btn">Update Comment</button>
+    </form>
+  </body>
+</html>
