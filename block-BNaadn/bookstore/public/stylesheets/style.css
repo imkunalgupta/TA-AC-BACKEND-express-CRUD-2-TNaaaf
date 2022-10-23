@@ -1,0 +1,150 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+body {
+  font-size: 1.6rem;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+section {
+  padding: 2% 9%;
+}
+
+/* styling  the header  */
+header {
+  padding: 2rem 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 2px 8px rgba(148, 94, 94, 0.1);
+}
+
+.logo {
+  color: #7400b8;
+  font-size: 3rem;
+  font-weight: 800;
+}
+.menu-btn {
+  margin: 0 0 0 2rem;
+  color: rgb(70, 23, 23);
+}
+.btn {
+  padding: 0.8rem 2.4rem;
+  background-color: #7400b8;
+  border-radius: 2rem;
+  color: #fff;
+}
+/* //styling the hero section here  */
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero-container h1 {
+  font-size: 5rem;
+  padding-top: 4rem;
+  text-transform: capitalize;
+}
+.hero-container a {
+  margin-top: 1rem;
+  background-color: #7400b8;
+  color: #fff;
+  padding: 0.8rem 3.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 2rem;
+}
+
+/* book form  */
+.book-form-container {
+  padding: 2% 9%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.form-container {
+  width: 70%;
+}
+.form-container form {
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form-container form input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #dddddd;
+  margin: 1rem 0;
+}
+
+#submit-btn {
+  width: auto;
+  padding: 0.8rem 2.4rem;
+}
+/* styling all books from here  */
+
+.all-books {
+  min-height: 100vh;
+}
+.book-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.book-card {
+  flex: 0 1 30%;
+  padding: 2rem;
+  border: 0.1rem solid #dddddd;
+}
+.book-card h2 {
+  font-size: 2rem;
+}
+.book-card p {
+  margin: 1rem 0;
+}
+.readmore {
+  padding: 0.8rem 1.6rem;
+  background-color: #7400b8;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+}
+
+.additional-information {
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.additional-information p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.additional-information span {
+  font-size: 1.4rem;
+  margin: 0 1rem 0 0;
+}
+.book-card-container {
+  margin: 2rem 0;
+}
